@@ -70,7 +70,7 @@ func init() {
 	RootCmd.AddCommand(scanCmd)
 
 	var homeDir, _ = os.UserHomeDir()
-	var defaultRoot = filepath.Join(homeDir, "Documents/WeChat Files/Applet")
+	var defaultRoot = filepath.Join(homeDir, "AppData/Roaming/Tencent/xwechat/radium/Applet/packages")
 
 	scanCmd.Flags().StringP("root", "r", defaultRoot, "the mini app path")
 }
