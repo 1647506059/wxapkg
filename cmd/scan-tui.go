@@ -32,17 +32,17 @@ func newScanTui(wxidInfo []util.WxidInfo) *scanTui {
 	var rows = make([]table.Row, 0, len(wxidInfo))
 	for _, info := range wxidInfo {
 		rows = append(rows, []string{
+			info.Wxid,
 			info.Nickname,
 			info.PrincipalName,
-			info.Description,
 		})
 	}
 
 	var title = color.New(color.FgMagenta, color.Bold).Sprint
 	columns := []table.Column{
+		{Title: title("AppID"), Width: 19},
 		{Title: title("Name"), Width: 20},
 		{Title: title("Developer"), Width: 30},
-		{Title: title("Description"), Width: 40},
 	}
 	prog.Width = 0
 	for _, c := range columns {
